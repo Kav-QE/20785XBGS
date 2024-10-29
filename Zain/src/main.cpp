@@ -155,6 +155,13 @@ void pre_auton() {
         break;
       case 1:
         Brain.Screen.printAt(5, 140, "BLUE AWP");
+        break;
+      case 2:
+        Brain.Screen.printAt(5, 140, "RED SOUTH");
+        break;
+      case 3:
+        Brain.Screen.printAt(5, 140, "BLUE SOUTH");
+        break;
     }
     if(Brain.Screen.pressing()){
       while(Brain.Screen.pressing()) {}
@@ -181,6 +188,12 @@ void autonomous(void) {
       break;
     case 1:
       blueAWP();
+      break;
+    case 2:
+      redSouth();
+      break;
+    case 3:
+      blueSouth();
       break;
  }
 }

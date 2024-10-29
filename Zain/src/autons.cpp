@@ -94,3 +94,61 @@ void blueAWP() {
   chassis.drive_max_voltage = 7.6;
   chassis.drive_distance(120);
 }
+
+
+void redSouth() {
+  // Initialising Motors
+  arm.setVelocity(100, rpm);
+  lower.setVelocity(200, rpm);
+  upper.setVelocity(600, rpm);
+  chassis.set_heading(0);
+
+  // Alliance Stake
+  arm.spin(reverse);
+  wait(1, seconds);
+  arm.spinFor(forward, 90, degrees);
+  
+  // Mogo
+  chassis.drive_distance(-55);
+  chassis.turn_to_angle(-90);
+  chassis.drive_distance(-40);
+  mogoClamp.set(true);
+
+  // Ring
+  lower.spin(forward);
+  upper.spin(forward);
+  chassis.turn_to_angle(218);
+  chassis.drive_distance(50);
+  
+  //Third Mogo
+  chassis.turn_to_angle(135);
+}
+
+
+void blueSouth() {
+  // Initialising Motors
+  arm.setVelocity(100, rpm);
+  lower.setVelocity(200, rpm);
+  upper.setVelocity(600, rpm);
+  chassis.set_heading(0);
+
+  // Alliance Stake
+  arm.spin(reverse);
+  wait(1, seconds);
+  arm.spinFor(forward, 90, degrees);
+  
+  // Mogo
+  chassis.drive_distance(-55);
+  chassis.turn_to_angle(90);
+  chassis.drive_distance(-40);
+  mogoClamp.set(true);
+
+  // Ring
+  lower.spin(forward);
+  upper.spin(forward);
+  chassis.turn_to_angle(-220);
+  chassis.drive_distance(65);
+  
+  //Third Mogo
+  chassis.turn_to_angle(-135);
+}
