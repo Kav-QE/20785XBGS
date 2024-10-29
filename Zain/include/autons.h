@@ -9,5 +9,5 @@ void default_constants();
 
 void redAWP();
 void blueAWP();
-void redGoalRush();
-void blueGoalRush();
+void redSouth();
+void blueSouth();
