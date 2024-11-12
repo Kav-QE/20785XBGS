@@ -56,9 +56,9 @@ pros::IMU imu(20);
 lemlib::OdomSensors sensors(nullptr, nullptr, nullptr, nullptr, &imu);
 
 // PID
-lemlib::ControllerSettings lateralController(0,
+lemlib::ControllerSettings lateralController(2,
                                             0,
-                                            0,
+                                            10,
                                             0,
                                             0,
                                             0,
@@ -66,9 +66,9 @@ lemlib::ControllerSettings lateralController(0,
                                             0,
                                             0);
 
-lemlib::ControllerSettings angularController(0,
+lemlib::ControllerSettings angularController(2,
                                             0,
-                                            0,
+                                            10,
                                             0,
                                             0,
                                             0,
@@ -147,6 +147,14 @@ void blueRingRush() {}
 void redSouth() {}
 void blueSouth() {}
 
+void PIDTest() {
+    // set position to x:0, y:0, heading:0
+    chassis.setPose(0, 0, 0);
+    // turn to face heading 90 with a very long timeout
+    chassis.turn(90, 100000);
+}
+
+
 
 // Selector
 rd::Selector selector({
@@ -173,7 +181,7 @@ void competition_initialize() {
 }
 
 void autonomous() {
-    arm.set_brake_mode(pros::E_MOTOR_BRAKE_HOLD);
+	PIDTest();
 
     // selector.run_auton();
 }
